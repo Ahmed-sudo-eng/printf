@@ -9,8 +9,13 @@
  */
 void write_one_digit(int number)
 {
-	int c = number;
+	char negative = 45;
 
-	c += 48;
-	write(1, &c, 1);
+	if (number < 0)	/* Handling negative numbers */
+	{
+		write(1, &negative, 1);
+		number = number * -1;
+	}
+	number += 48;
+	write(1, &number, 1);
 }

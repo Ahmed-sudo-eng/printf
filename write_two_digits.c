@@ -9,8 +9,14 @@
  */
 void write_two_digits(int number)
 {
+	char negative = 45;
 	int a, b;
 
+	if (number < 0)
+	{
+		write(1, &negative, 1);
+		number = number * -1;
+	}
 	b = number % 10;
 	number -= b;
 	number /= 10;

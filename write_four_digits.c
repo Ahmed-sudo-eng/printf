@@ -9,13 +9,19 @@
  */
 void write_four_digits(int number)
 {
+	char negative = 45;
 	int a, b, c, d;
 
+	if (number < 0)
+	{
+		write(1, &negative, 1);
+		number = number * -1;
+	}
 	d = number % 10;
 	number -= d;
 	number /= 10;
 	c = number % 10;
-	number -= d;
+	number -= c;
 	number /= 10;
 	b = number % 10;
 	number -= b;

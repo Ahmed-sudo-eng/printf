@@ -10,6 +10,9 @@ int digits_counter(int number)
 {
 	int dn; /* digits number */
 
+	if (number < 0)
+		number = number * -1;	/* To handle negative numbers */
+
 	if ((number / 1000000000) != 0)
 		dn = 10;
 	else if ((number / 100000000) != 0)

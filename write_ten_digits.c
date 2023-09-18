@@ -9,8 +9,14 @@
  */
 void write_ten_digits(int number)
 {
+	char negative = 45;
 	int a, b, c, d, e, f, g, h, i, j;
 
+	if (number < 0)
+	{
+		write(1, &negative, 1);
+		number = number * -1;
+	}
 	j = number % 10;
 	number -= j;
 	number /= 10;

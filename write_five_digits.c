@@ -9,8 +9,14 @@
  */
 void write_five_digits(int number)
 {
+	char negative = 45;
 	int a, b, c, d, e;
 
+	if (number < 0)
+	{
+		write(1, &negative, 1);
+		number = number * -1;
+	}
 	e = number % 10;
 	number -= e;
 	number /= 10;
