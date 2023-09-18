@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
- * write_in_binary - a function that convert decimal numbers to binary and 
+ * write_in_binary - a function that convert decimal numbers to binary and
  * print it
  * @number: The number to be converted and printed
  *
@@ -15,7 +15,7 @@ void write_in_binary(int number)
 	int j;
 	char bin_dig;
 
-	while(1)
+	while (1)
 	{
 		if (number == 0)
 		{

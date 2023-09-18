@@ -11,10 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i;
-	int n;
-	int number;
-	int dn;	/* digits number */
+	int i, n, number;
 	int count = 0;
 	char c;
 
@@ -42,83 +39,31 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 					number = va_arg(ap, int);
-					dn = digits_counter(number);
-					count += dn;
-					switch (dn)
-					{
-						case 1:
-							write_one_digit(number);
-							break;
-						case 2:
-							write_two_digits(number);
-							break;
-						case 3:
-							write_three_digits(number);
-							break;
-						case 4:
-							write_four_digits(number);
-							break;
-						case 5:
-							write_five_digits(number);
-							break;
-						case 6:
-							write_six_digits(number);
-							break;
-						case 7:
-							write_seven_digits(number);
-							break;
-						case 8:
-							write_eight_digits(number);
-							break;
-						case 9:
-							write_nine_digits(number);
-							break;
-						case 10:
-							write_ten_digits(number);
-							break;
-					}
+					write_in_decimal(number);
 					break;
 				case 'i':
 					number = va_arg(ap, int);
-					dn = digits_counter(number);
-					count += dn;
-					switch (dn)
-					{
-						case 1:
-							write_one_digit(number);
-							break;
-						case 2:
-							write_two_digits(number);
-							break;
-						case 3:
-							write_three_digits(number);
-							break;
-						case 4:
-							write_four_digits(number);
-							break;
-						case 5:
-							write_five_digits(number);
-							break;
-						case 6:
-							write_six_digits(number);
-							break;
-						case 7:
-							write_seven_digits(number);
-							break;
-						case 8:
-							write_eight_digits(number);
-							break;
-						case 9:
-							write_nine_digits(number);
-							break;
-						case 10:
-							write_ten_digits(number);
-							break;
-					}
+					write_in_decimal(number);
 					break;
 				case 'b':
 					number = va_arg(ap, int);
 					write_in_binary(number);
+					break;
+				case 'u':
+					number = va_arg(ap, int);
+					write_in_decimal(number);
+					break;
+				case 'o':
+					number = va_arg(ap, int);
+					write_in_octal(number);
+					break;
+				case 'x':
+					number = va_arg(ap, int);
+					write_in_lower_hex(number);
+					break;
+				case 'X':
+					number = va_arg(ap, int);
+					write_in_upper_hex(number);
 					break;
 			}
 		}
