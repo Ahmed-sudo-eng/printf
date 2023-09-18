@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i;
 	int n;
+	int number;
+	int dn;
 	int count = 0;
 	char c;
 
@@ -37,6 +39,82 @@ int _printf(const char *format, ...)
 				case '%':
 					n = write_char('%');
 					count += n;
+					break;
+				case 'd':
+					number = va_arg(ap, int);
+					dn = digits_counter(number);
+					count += dn;
+					switch (dn)
+					{
+						case 1:
+							write_one_digit(number);
+							break;
+						case 2:
+							write_two_digits(number);
+							break;
+						case 3:
+							write_three_digits(number);
+							break;
+						case 4:
+							write_four_digits(number);
+							break;
+						case 5:
+							write_five_digits(number);
+							break;
+						case 6:
+							write_six_digits(number);
+							break;
+						case 7:
+							write_seven_digits(number);
+							break;
+						case 8:
+							write_eight_digits(number);
+							break;
+						case 9:
+							write_nine_digits(number);
+							break;
+						case 10:
+							write_ten_digits(number);
+							break;
+					}
+					break;
+				case 'i':
+					number = va_arg(ap, int);
+					dn = digits_counter(number);
+					count += dn;
+					switch (dn)
+					{
+						case 1:
+							write_one_digit(number);
+							break;
+						case 2:
+							write_two_digits(number);
+							break;
+						case 3:
+							write_three_digits(number);
+							break;
+						case 4:
+							write_four_digits(number);
+							break;
+						case 5:
+							write_five_digits(number);
+							break;
+						case 6:
+							write_six_digits(number);
+							break;
+						case 7:
+							write_seven_digits(number);
+							break;
+						case 8:
+							write_eight_digits(number);
+							break;
+						case 9:
+							write_nine_digits(number);
+							break;
+						case 10:
+							write_ten_digits(number);
+							break;
+					}
 					break;
 			}
 		}
