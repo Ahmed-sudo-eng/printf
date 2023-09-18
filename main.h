@@ -14,4 +14,5 @@ void write_seven_digits(int number);
 void write_eight_digits(int number);
 void write_nine_digits(int number);
 void write_ten_digits(int number);
+void write_in_binary(int number);
 #endif

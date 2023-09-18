@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	int i;
 	int n;
 	int number;
-	int dn;
+	int dn;	/* digits number */
 	int count = 0;
 	char c;
 
@@ -115,6 +115,10 @@ int _printf(const char *format, ...)
 							write_ten_digits(number);
 							break;
 					}
+					break;
+				case 'b':
+					number = va_arg(ap, int);
+					write_in_binary(number);
 					break;
 			}
 		}
