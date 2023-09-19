@@ -8,7 +8,7 @@
  *
  * Return: The number of digits printed
  */
-int write_in_binary(int number)
+int write_in_binary(unsigned int number)
 {
 	int arr[64];
 	int i = 0;
