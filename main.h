@@ -10,4 +10,5 @@ int write_in_octal(unsigned int number);
 int write_in_lower_hex(unsigned int number);
 int write_in_upper_hex(unsigned int number);
 int write_non_printable_chars_string(char *s);
+int write_reversed_str(const char *s);
 #endif

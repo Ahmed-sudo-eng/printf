@@ -76,6 +76,10 @@ int _printf(const char *format, ...)
 					n = write_non_printable_chars_string(va_arg(ap, char *));
 					count += n;
 					break;
+				case 'r':
+					n = write_reversed_str(va_arg(ap, char *));
+					count += n;
+					break;
 			}
 		}
 		else
