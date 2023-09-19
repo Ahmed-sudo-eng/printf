@@ -33,7 +33,7 @@ int write_non_printable_chars_string(char *s)
 			}
 			else
 				write_in_upper_hex(c);
-			count = count + 2;
+			count = count + 3;
 		}
 		else
 			write(1, &c, 1);
