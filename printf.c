@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 					break;
 				case 'u':
 					number = va_arg(ap, int);
-					write_in_decimal(number);
+					write_unsigned_decimal(number);
 					break;
 				case 'o':
 					number = va_arg(ap, int);

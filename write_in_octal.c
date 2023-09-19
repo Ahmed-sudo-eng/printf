@@ -8,9 +8,9 @@
  *
  * Return: Nothing
  */
-void write_in_octal(int number)
+void write_in_octal(unsigned int number)
 {
-	int arr[12];
+	int arr[15];
 	int i = 0;
 	int j;
 	int oct_dig;

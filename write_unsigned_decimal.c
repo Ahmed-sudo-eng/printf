@@ -2,25 +2,19 @@
 #include <unistd.h>
 
 /**
- * write_in_decimal - a function that writes decimal numbers to stdout
+ * write_unsigned_decimal - a function that writes unsigned decimal
+ * numbers to stdout
  * @number: The number to be printed
  *
  * Return: Nothing
  */
-void write_in_decimal(int number)
+void write_unsigned_decimal(unsigned int number)
 {
 	int arr[12];
 	int i = 0;
 	int j;
 	int dec_dig;
-	char neg = 45;
 
-	/* Handling negative sign numbers */
-	if (number < 0)
-	{
-		write(1, &neg, 1);
-		number = number * -1;
-	}
 	/* Adding number digits one by one to the array */
 	while (1)
 	{

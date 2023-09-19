@@ -8,7 +8,7 @@
  *
  * Return: Nothing
  */
-void write_in_lower_hex(int number)
+void write_in_lower_hex(unsigned int number)
 {
 	int arr[12];
 	int i = 0;
