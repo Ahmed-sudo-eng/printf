@@ -72,6 +72,10 @@ int _printf(const char *format, ...)
 					n = write_in_upper_hex(number);
 					count += n;
 					break;
+				case 'S':
+					n = write_non_printable_chars_string(va_arg(ap, char *));
+					count += n;
+					break;
 			}
 		}
 		else
