@@ -5,9 +5,9 @@
  * write_in_decimal - a function that writes decimal numbers to stdout
  * @number: The number to be printed
  *
- * Return: Nothing
+ * Return: The number of digits printed
  */
-void write_in_decimal(int number)
+int write_in_decimal(int number)
 {
 	int arr[12];
 	int i = 0;
@@ -40,4 +40,5 @@ void write_in_decimal(int number)
 		dec_dig = dec_dig + 48;
 		write(1, &dec_dig, 1);
 	}
+	return (i + 1);
 }

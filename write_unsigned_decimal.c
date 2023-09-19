@@ -6,9 +6,9 @@
  * numbers to stdout
  * @number: The number to be printed
  *
- * Return: Nothing
+ * Return: The number of digits printed
  */
-void write_unsigned_decimal(unsigned int number)
+int write_unsigned_decimal(unsigned int number)
 {
 	int arr[12];
 	int i = 0;
@@ -34,4 +34,5 @@ void write_unsigned_decimal(unsigned int number)
 		dec_dig = dec_dig + 48;
 		write(1, &dec_dig, 1);
 	}
+	return (i + 1);
 }

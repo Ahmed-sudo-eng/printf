@@ -6,9 +6,9 @@
  * print it
  * @number: The number to be converted and printed
  *
- * Return: Nothing
+ * Return: The number of digits printed
  */
-void write_in_binary(int number)
+int write_in_binary(int number)
 {
 	int arr[64];
 	int i = 0;
@@ -21,7 +21,7 @@ void write_in_binary(int number)
 		{
 			bin_dig = 48;
 			write(1, &bin_dig, 1);
-			return;
+			return (1);
 		}
 		if (number == 1)
 		{
@@ -38,4 +38,5 @@ void write_in_binary(int number)
 		bin_dig = arr[j] + 48;
 		write(1, &bin_dig, 1);
 	}
+	return (i + 1);
 }

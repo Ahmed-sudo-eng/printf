@@ -6,15 +6,16 @@
  * hexdecimal and print it
  * @number: The number to be converted
  *
- * Return: Nothing
+ * Return: The number of digits printed
  */
-void write_in_lower_hex(unsigned int number)
+int write_in_lower_hex(unsigned int number)
 {
 	int arr[12];
 	int i = 0;
 	int j;
 	int hex_dig;
 
+	/* Conveting decimal to hex and storing it in the array */
 	while (1)
 	{
 		if (number < 16)
@@ -26,6 +27,7 @@ void write_in_lower_hex(unsigned int number)
 		number = number / 16;
 		i++;
 	}
+	/* Writing hex number to stdout */
 	for (j = i; j >= 0; j--)
 	{
 		hex_dig = arr[j];
@@ -65,4 +67,5 @@ void write_in_lower_hex(unsigned int number)
 			write(1, &hex_dig, 1);
 		}
 	}
+	return (i + 1);
 }

@@ -6,9 +6,9 @@
  * it
  * @number: The number to be printed
  *
- * Return: Nothing
+ * Return: The number of digits printed
  */
-void write_in_octal(unsigned int number)
+int write_in_octal(unsigned int number)
 {
 	int arr[15];
 	int i = 0;
@@ -31,4 +31,5 @@ void write_in_octal(unsigned int number)
 		oct_dig = arr[j] + 48;
 		write(1, &oct_dig, 1);
 	}
+	return (i + 1);
 }

@@ -39,31 +39,38 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 					number = va_arg(ap, int);
-					write_in_decimal(number);
+					n = write_in_decimal(number);
+					count += n;
 					break;
 				case 'i':
 					number = va_arg(ap, int);
-					write_in_decimal(number);
+					n = write_in_decimal(number);
+					count += n;
 					break;
 				case 'b':
 					number = va_arg(ap, int);
-					write_in_binary(number);
+					n = write_in_binary(number);
+					count += n;
 					break;
 				case 'u':
 					number = va_arg(ap, int);
-					write_unsigned_decimal(number);
+					n = write_unsigned_decimal(number);
+					count += n;
 					break;
 				case 'o':
 					number = va_arg(ap, int);
-					write_in_octal(number);
+					n = write_in_octal(number);
+					count += n;
 					break;
 				case 'x':
 					number = va_arg(ap, int);
-					write_in_lower_hex(number);
+					n = write_in_lower_hex(number);
+					count += n;
 					break;
 				case 'X':
 					number = va_arg(ap, int);
-					write_in_upper_hex(number);
+					n = write_in_upper_hex(number);
+					count += n;
 					break;
 			}
 		}
