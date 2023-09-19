@@ -7,7 +7,7 @@
  *
  * Return: The number of digits printed
  */
-int write_in_decimal(int number)
+int write_in_decimal(signed int number)
 {
 	int arr[12];
 	int i = 0;
