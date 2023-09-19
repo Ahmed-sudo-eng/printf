@@ -7,7 +7,7 @@
  *
  * Return: Nothing
  */
-int write_char(char c)
+int write_char(unsigned char c)
 {
 	write(1, &c, 1);
 	return (1);
