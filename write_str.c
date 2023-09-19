@@ -1,17 +1,21 @@
 #include "main.h"
 #include <unistd.h>
-#include <string.h>
 
 /**
  * write_str - This function prints a string to stdout
  * @s: a pointer to the string
  *
- * Return: Nothing
+ * Return: The number of character written
  */
-int write_str(char *s)
+int write_str(const char *s)
 {
-	int n;
+	int i;
+	char c;
 
-	n = write(1, s, strlen(s));
-	return (n);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		c = s[i];
+		write(1, &c, 1);
+	}
+	return (i);
 }
