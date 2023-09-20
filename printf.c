@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 	/* if the format string is Null or is % the program is terminated */
-	if (format == NULL || format[0] == '%')
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	/* Parsing the format string */
 	for (i = 0; format[i] != '\0'; i++)
