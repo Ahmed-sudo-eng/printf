@@ -27,7 +27,7 @@ int write_str(const char *s)
 		write(1, &c, 1);
 		c = ')';
 		write(1, &c, 1);
-		return (0);
+		return (6);	/* Return the lentgth of (null) */
 	}
 	/* Handling normal string */
 	for (i = 0; s[i] != '\0'; i++)
