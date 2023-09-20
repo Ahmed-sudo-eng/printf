@@ -88,6 +88,55 @@ int _printf(const char *format, ...)
 					n = write_str_in_rot13(va_arg(ap, char *));
 					count += n;
 					break;
+				case '+':
+					number = va_arg(ap, int);
+					if (number >= 0)
+					{
+						write_char('+');
+						count += 1;
+					}
+					n = write_in_decimal(number);
+					count += n;
+					i++;
+					break;
+				case ' ':
+					number = va_arg(ap, int);
+					if (number >= 0)
+					{
+						write_char(' ');
+						count += 1;
+					}
+					n = write_in_decimal(number);
+					count += n;
+					i++;
+					break;
+				case '#':
+					number = va_arg(ap, int);
+					if (format[i + 1] == 'o')
+					{
+						write_char('0');
+						count += 1;
+						n = write_in_octal(number);
+						count += n;
+					}
+					else if (format[i + 1] == 'x')
+					{
+						write_char('0');
+						write_char('x');
+						count += 2;
+						n = write_in_lower_hex(number);
+						count += n;
+					}
+					else if (format[i + 1] == 'X')
+					{
+						write_char('0');
+						write_char('X');
+						count += 2;
+						n = write_in_upper_hex(number);
+						count += n;
+					}
+					i++;
+					break;
 				default:
 					n = write_char('%');
 					count += n;
