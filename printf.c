@@ -88,6 +88,12 @@ int _printf(const char *format, ...)
 					n = write_str_in_rot13(va_arg(ap, char *));
 					count += n;
 					break;
+				default:
+					n = write_char('%');
+					count += n;
+					n = write_char(c);
+					count += n;
+					break;
 			}
 		}
 		else
