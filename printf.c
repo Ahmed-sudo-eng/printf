@@ -80,6 +80,10 @@ int _printf(const char *format, ...)
 					n = write_reversed_str(va_arg(ap, char *));
 					count += n;
 					break;
+				case 'R':
+					n = write_str_in_rot13(va_arg(ap, char *));
+					count += n;
+					break;
 			}
 		}
 		else
