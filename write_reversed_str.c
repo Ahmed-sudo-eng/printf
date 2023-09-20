@@ -24,5 +24,5 @@ int write_reversed_str(const char *s)
 		c = s[j];
 		write(1, &c, 1);
 	}
-	return (i);
+	return (i + 1);
 }
