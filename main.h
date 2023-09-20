@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stddef.h>
 int _printf(const char *format, ...);
 int write_char(unsigned char c);
 int write_str(const char *s);
