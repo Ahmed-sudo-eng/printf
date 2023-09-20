@@ -13,8 +13,12 @@ int write_reversed_str(const char *s)
 	int j;
 	char c;
 
+	/* To find the string length */
 	while (s[i] != '\0')
 		i++;
+	/* To prvent NULL from being printed */
+	i--;	
+	/* Printing the string in reverse */
 	for (j = i; j >= 0; j--)
 	{
 		c = s[j];
